@@ -1,5 +1,6 @@
 ---
 const { title = "David Ly" } = Astro.props;
+import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
@@ -133,9 +134,9 @@ const { title = "David Ly" } = Astro.props;
   </head>
   <body>
     <header>
-      <a href="/">Home</a> · 
-      <a href="/about">About</a> · 
-      <a href="/blog">Blog</a>
+      <a href={`${import.meta.env.BASE_URL}`}>Home</a> · 
+      <a href={`${import.meta.env.BASE_URL}about`}>About</a> · 
+      <a href={`${import.meta.env.BASE_URL}blog`}>Blog</a>
     </header>
     <div class="main-layout">
       <aside class="profile-card">

@@ -3,4 +3,5 @@ export default {
   base: '/lydawei',
   integrations: [],
   outDir: './dist',
+  trailingSlash: 'ignore'
 }; 
