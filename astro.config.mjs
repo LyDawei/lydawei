@@ -1,5 +1,6 @@
 export default {
-  site: 'https://lydawei.com',
+  site: 'https://lydawei.github.io',
+  base: '/lydawei',
   integrations: [],
   outDir: './dist',
 };
