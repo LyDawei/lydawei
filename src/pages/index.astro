@@ -1,0 +1,176 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout title="David Ly - Senior Full-Stack Developer">
+  <div class="home-content">
+    <h1>Hey there! 👋</h1>
+    
+    <div class="intro">
+      <p>I'm David, and I build things that work. Currently crafting web applications, leading development teams, and occasionally writing about the craft.</p>
+    </div>
+
+    <section class="current-focus">
+      <h2>What I'm Working On</h2>
+      <div class="focus-grid">
+        <div class="focus-item">
+          <h3>🚀 Building Products</h3>
+          <p>Full-stack web applications with React, TypeScript, and modern tooling</p>
+        </div>
+        <div class="focus-item">
+          <h3>🎮 Side Quest</h3>
+          <p>A psychological platformer game in Godot (because why not?)</p>
+        </div>
+        <div class="focus-item">
+          <h3>✍️ Writing</h3>
+          <p>Thoughts on development, leadership, and building better software</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <h2>Start Here</h2>
+      <div class="links-grid">
+        <a href="/about" class="link-card">
+          <h3>My Story</h3>
+          <p>Learn about my journey, philosophy, and what drives me →</p>
+        </a>
+        <a href="/blog" class="link-card">
+          <h3>Recent Writing</h3>
+          <p>Latest thoughts on code, leadership, and craft →</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <p>Building something interesting? <strong>Let's chat.</strong></p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-content {
+    max-width: 800px;
+  }
+  
+  h1 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  
+  .intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #2d2d2d;
+    border-radius: 8px;
+    border-left: 4px solid #64b5f6;
+    color: #e0e0e0;
+  }
+  
+  .intro strong {
+    color: #64b5f6;
+  }
+  
+  section {
+    margin-bottom: 2.5rem;
+  }
+  
+  h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .focus-grid, .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .focus-item {
+    background: #2d2d2d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 1px solid #404040;
+  }
+  
+  .focus-item h3 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+  
+  .focus-item p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  
+  .link-card {
+    display: block;
+    background: #2d2d2d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 1px solid #404040;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    border-color: #64b5f6;
+  }
+  
+  .link-card h3 {
+    margin-bottom: 0.5rem;
+    color: #64b5f6;
+    font-size: 1.1rem;
+  }
+  
+  .link-card p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  
+  .contact-cta {
+    text-align: center;
+    padding: 2rem;
+    background: #2d2d2d;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    border: 1px solid #404040;
+  }
+  
+  .contact-cta strong {
+    color: #64b5f6;
+  }
+  
+  a {
+    color: #64b5f6;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: #90caf9;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .focus-grid, .links-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import AboutLayout from "../layouts/AboutLayout.astro"
+---
+
+<AboutLayout title="About David Ly">
+  <div class="additional-content">
+    <h2>My Story</h2>
+    <p>I'm David Ly — a senior full-stack developer who builds pragmatic systems designed to last. I focus on clarity, maintainability, and writing code that actually works when it matters. With over a decade of experience across mobile, web, and game development, I care more about shipping thoughtful solutions than chasing clever abstractions.</p>
+
+    <p>You might've seen the handle Lydawei floating around. It's more than just a username — it's my Chinese name (李大衛), and also a quiet play on the phrase "lead the way." That's who I aspire to be: someone who leads thoughtfully. Over the years, I've learned from bad leaders, harsh leaders, and truly great ones — and those experiences shaped my belief that leadership can be quiet, deliberate, and human.</p>
+
+    <p>I don't do traditional whiteboard interviews — not because I can't, but because I believe strong engineering is best demonstrated through real code, sound decisions, and collaborative problem-solving. I'm all for working through tough problems live — as long as it's a conversation, not an ego check.</p>
+
+    <p>Outside of work, I'm raising two kids, developing a psychological platformer in Godot, and exploring storytelling through art and memory.</p>
+  </div>
+</AboutLayout>
+
+<style>
+  .additional-content {
+    background: #2d2d2d;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #404040;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;
+  }
+  
+  .additional-content h2 {
+    margin-top: 0;
+    color: #64b5f6;
+    border-bottom: 2px solid #404040;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .additional-content p {
+    color: #c0c0c0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  
+  .additional-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .additional-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

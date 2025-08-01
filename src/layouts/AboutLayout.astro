@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title = "About - David Ly" } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class="about-content">
+    <h1>About Me</h1>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 800px;
+  }
+  
+  .about-content h1 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .about-content h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
