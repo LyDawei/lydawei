@@ -10,39 +10,70 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     <div class="particle"></div>
   </div>
 
-  <div class="additional-content">
-    <h2 class="animated-heading">My Story</h2>
+  <div class="about-content">
     
-    <div class="story-section section-1">
-      <p>I'm David Ly — a senior full-stack developer who builds pragmatic systems designed to last. I focus on clarity, maintainability, and writing code that actually works when it matters. With over a decade of experience across mobile, web, and game development, I care more about shipping thoughtful solutions than chasing clever abstractions.</p>
-    </div>
+    <section class="intro-section animated-section">
+      <h2 class="section-title">My Story</h2>
+      <div class="intro-card">
+        <p>I'm David Ly — a senior full-stack developer who builds pragmatic systems designed to last. I focus on clarity, maintainability, and writing code that actually works when it matters.</p>
+        <div class="card-shine"></div>
+      </div>
+    </section>
 
-    <div class="story-section section-2">
-      <p>You might've seen the handle <span class="highlight">Lydawei</span> floating around. It's more than just a username — it's my Chinese name (李大衛), and also a quiet play on the phrase "lead the way." That's who I aspire to be: someone who leads thoughtfully. Over the years, I've learned from bad leaders, harsh leaders, and truly great ones — and those experiences shaped my belief that leadership can be quiet, deliberate, and human.</p>
-    </div>
+    <section class="story-grid animated-section">
+      <div class="story-card card-1">
+        <h3>The Journey</h3>
+        <p>With over a decade of experience across mobile, web, and game development, I care more about shipping thoughtful solutions than chasing clever abstractions.</p>
+        <div class="item-glow"></div>
+      </div>
 
-    <div class="story-section section-3">
-      <p>I don't do traditional whiteboard interviews — not because I can't, but because I believe strong engineering is best demonstrated through real code, sound decisions, and collaborative problem-solving. I'm all for working through tough problems live — as long as it's a conversation, not an ego check.</p>
-    </div>
+      <div class="story-card card-2">
+        <h3>Leading the Way</h3>
+        <p>You might've seen the handle <span class="highlight">Lydawei</span> floating around. It's more than just a username — it's my Chinese name (李大衛), and also a quiet play on the phrase "lead the way." That's who I aspire to be: someone who leads thoughtfully.</p>
+        <div class="item-glow"></div>
+      </div>
 
-    <div class="story-section section-4">
-      <p>Outside of work, I'm raising two kids, developing a psychological platformer in Godot, and exploring storytelling through art and memory.</p>
-    </div>
+      <div class="story-card card-3">
+        <h3>Real Engineering</h3>
+        <p>I don't do traditional whiteboard interviews — not because I can't, but because I believe strong engineering is best demonstrated through real code, sound decisions, and collaborative problem-solving.</p>
+        <div class="item-glow"></div>
+      </div>
+
+      <div class="story-card card-4">
+        <h3>Beyond Code</h3>
+        <p>Outside of work, I'm raising two kids, developing a psychological platformer in Godot, and exploring storytelling through art and memory.</p>
+        <div class="item-glow"></div>
+      </div>
+    </section>
 
     <!-- Animated skills visualization -->
-    <div class="skills-visual">
-      <h3 class="skills-title">What I Tinker With</h3>
+    <section class="skills-section animated-section">
+      <h2 class="section-title">What I Tinker With</h2>
       <div class="tech-orbit">
-        <div class="tech-item tech-1">TypeScript</div>
-        <div class="tech-item tech-2">React</div>
-        <div class="tech-item tech-3">Node.js</div>
-        <div class="tech-item tech-4">Astro</div>
-        <div class="tech-item tech-5">Godot</div>
-        <div class="tech-item tech-6">Python</div>
-        <div class="tech-item tech-7">JavaScript</div>
+        <div class="tech-item tech-1">
+          <span class="tech-text">TypeScript</span>
+        </div>
+        <div class="tech-item tech-2">
+          <span class="tech-text">React</span>
+        </div>
+        <div class="tech-item tech-3">
+          <span class="tech-text">Node.js</span>
+        </div>
+        <div class="tech-item tech-4">
+          <span class="tech-text">Astro</span>
+        </div>
+        <div class="tech-item tech-5">
+          <span class="tech-text">Godot</span>
+        </div>
+        <div class="tech-item tech-6">
+          <span class="tech-text">Python</span>
+        </div>
+        <div class="tech-item tech-7">
+          <span class="tech-text">JavaScript</span>
+        </div>
         <div class="center-dot"></div>
       </div>
-    </div>
+    </section>
   </div>
 </AboutLayout>
 
@@ -93,77 +124,31 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     }
   }
 
-  .additional-content {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    padding: 3rem;
-    border-radius: 16px;
-    border: 1px solid #404040;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  .about-content {
+    max-width: 800px;
     position: relative;
     z-index: 2;
-    overflow: hidden;
   }
 
-  .additional-content::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(100, 181, 246, 0.05) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.05; }
-    50% { transform: scale(1.1); opacity: 0.1; }
-  }
-  
-  .animated-heading {
-    margin-top: 0;
-    color: #ffffff;
-    border-bottom: 2px solid #64b5f6;
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    background: linear-gradient(45deg, #64b5f6, #90caf9);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 3s ease-in-out infinite, slideInLeft 0.8s ease-out;
-  }
-
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .story-section {
-    transform: translateY(20px);
-    opacity: 0;
+  /* Animated Sections */
+  .animated-section {
+    margin-bottom: 2.5rem;
     animation: fadeInUp 0.8s ease-out forwards;
-    position: relative;
-    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  .section-1 { animation-delay: 0.2s; }
-  .section-2 { animation-delay: 0.4s; }
-  .section-3 { animation-delay: 0.6s; }
-  .section-4 { animation-delay: 0.8s; }
+  .intro-section {
+    animation-delay: 0.1s;
+  }
+
+  .story-grid {
+    animation-delay: 0.3s;
+  }
+
+  .skills-section {
+    animation-delay: 0.5s;
+  }
 
   @keyframes fadeInUp {
     to {
@@ -171,21 +156,139 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       transform: translateY(0);
     }
   }
-  
-  .story-section p {
-    color: #c0c0c0;
-    font-size: 1.05rem;
-    line-height: 1.7;
+
+  .section-title {
+    color: #ffffff;
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    background: linear-gradient(45deg, #ffffff, #64b5f6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Intro Card */
+  .intro-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #64b5f6;
+    color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border: 1px solid #404040;
+    transition: all 0.3s ease;
+  }
+
+  .intro-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    border-color: #64b5f6;
+  }
+
+  .intro-card p {
+    margin: 0;
+  }
+
+  /* Story Grid */
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Story Cards */
+  .story-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border: 1px solid #404040;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  .card-1 { animation-delay: 0.6s; }
+  .card-2 { animation-delay: 0.7s; }
+  .card-3 { animation-delay: 0.8s; }
+  .card-4 { animation-delay: 0.9s; }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .story-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #64b5f6;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 20px rgba(100, 181, 246, 0.2);
+  }
+
+  .item-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 181, 246, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .story-card:hover .item-glow {
+    opacity: 1;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.1); opacity: 0.2; }
+  }
+
+  .story-card h3 {
+    margin-bottom: 0.8rem;
+    color: #64b5f6;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
   }
 
-  .story-section:hover p {
-    color: #e0e0e0;
+  .story-card:hover h3 {
+    color: #90caf9;
   }
-  
-  .story-section p:last-child {
-    margin-bottom: 0;
+
+  .story-card p {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+
+  .story-card:hover p {
+    color: #e0e0e0;
   }
 
   .highlight {
@@ -200,17 +303,49 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     to { text-shadow: 0 0 10px rgba(100, 181, 246, 0.8); }
   }
 
-  /* Skills Visualization */
-  .skills-visual {
-    margin-top: 3rem;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out 1s both;
+  .card-shine {
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(35deg);
+    transition: left 0.6s ease;
   }
 
-  .skills-title {
-    color: #ffffff;
-    margin-bottom: 2rem;
-    font-size: 1.3rem;
+  .intro-card:hover .card-shine {
+    left: 100%;
+  }
+
+  /* Skills Section */
+  .skills-section {
+    text-align: center;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #404040;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .skills-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    border-color: #64b5f6;
+  }
+
+  .skills-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 181, 246, 0.05) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
   }
 
   .tech-orbit {
@@ -218,119 +353,163 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     width: 300px;
     height: 300px;
     margin: 0 auto;
-    overflow: hidden;
-    border-radius: 50%;
   }
 
   .center-dot {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px;
-    height: 8px;
-    background: #64b5f6;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #64b5f6 0%, #42a5f5 70%, #1e88e5 100%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    animation: centerPulse 2s ease-in-out infinite;
+    animation: centerPulse 3s ease-in-out infinite;
+    z-index: 3;
+    box-shadow: 0 0 20px rgba(100, 181, 246, 0.6);
   }
 
   @keyframes centerPulse {
     0%, 100% { 
       transform: translate(-50%, -50%) scale(1);
-      box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
+      box-shadow: 0 0 20px rgba(100, 181, 246, 0.6);
     }
     50% { 
-      transform: translate(-50%, -50%) scale(1.5);
-      box-shadow: 0 0 20px rgba(100, 181, 246, 0.8);
+      transform: translate(-50%, -50%) scale(1.3);
+      box-shadow: 0 0 30px rgba(100, 181, 246, 0.9);
     }
   }
 
   .tech-item {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    z-index: 2;
+  }
+
+  .tech-text {
+    display: block;
     padding: 0.5rem 1rem;
-    background: rgba(100, 181, 246, 0.1);
-    border: 1px solid rgba(100, 181, 246, 0.3);
+    background: rgba(100, 181, 246, 0.15);
+    border: 1px solid rgba(100, 181, 246, 0.4);
     border-radius: 20px;
     color: #64b5f6;
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
-    transform-origin: 150px 150px; /* Center of the 300px container */
-    animation: orbit 20s linear infinite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
   }
 
+  .tech-text:hover {
+    background: rgba(100, 181, 246, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
+  }
+
+  /* Gravitational orbital mechanics with different speeds and elliptical paths */
   .tech-1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg);
-    animation-delay: 0s;
+    animation: orbit1 15s ease-in-out infinite;
   }
 
   .tech-2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(51.4deg) translateX(120px) rotate(-51.4deg);
-    animation-delay: -2.86s;
+    animation: orbit2 18s ease-in-out infinite;
   }
 
   .tech-3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(102.8deg) translateX(120px) rotate(-102.8deg);
-    animation-delay: -5.72s;
+    animation: orbit3 22s ease-in-out infinite;
   }
 
   .tech-4 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(154.2deg) translateX(120px) rotate(-154.2deg);
-    animation-delay: -8.58s;
+    animation: orbit4 25s ease-in-out infinite;
   }
 
   .tech-5 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(205.6deg) translateX(120px) rotate(-205.6deg);
-    animation-delay: -11.44s;
+    animation: orbit5 28s ease-in-out infinite;
   }
 
   .tech-6 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(257deg) translateX(120px) rotate(-257deg);
-    animation-delay: -14.3s;
+    animation: orbit6 32s ease-in-out infinite;
   }
 
   .tech-7 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(308.4deg) translateX(120px) rotate(-308.4deg);
-    animation-delay: -17.16s;
+    animation: orbit7 35s ease-in-out infinite;
   }
 
-  @keyframes orbit {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg);
-      opacity: 0.6;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg);
-      opacity: 0.6;
-    }
+  /* Realistic orbital paths with elliptical motion and varying speeds */
+  @keyframes orbit1 {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(90deg) translateX(85px) rotate(-90deg); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) translateX(80px) rotate(-180deg); }
+    75% { transform: translate(-50%, -50%) rotate(270deg) translateX(75px) rotate(-270deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
   }
 
-  .tech-item:hover {
-    background: rgba(100, 181, 246, 0.2);
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+  @keyframes orbit2 {
+    0% { transform: translate(-50%, -50%) rotate(45deg) translateX(100px) rotate(-45deg); }
+    25% { transform: translate(-50%, -50%) rotate(135deg) translateX(105px) rotate(-135deg); }
+    50% { transform: translate(-50%, -50%) rotate(225deg) translateX(100px) rotate(-225deg); }
+    75% { transform: translate(-50%, -50%) rotate(315deg) translateX(95px) rotate(-315deg); }
+    100% { transform: translate(-50%, -50%) rotate(405deg) translateX(100px) rotate(-405deg); }
+  }
+
+  @keyframes orbit3 {
+    0% { transform: translate(-50%, -50%) rotate(90deg) translateX(120px) rotate(-90deg); }
+    25% { transform: translate(-50%, -50%) rotate(180deg) translateX(125px) rotate(-180deg); }
+    50% { transform: translate(-50%, -50%) rotate(270deg) translateX(120px) rotate(-270deg); }
+    75% { transform: translate(-50%, -50%) rotate(360deg) translateX(115px) rotate(-360deg); }
+    100% { transform: translate(-50%, -50%) rotate(450deg) translateX(120px) rotate(-450deg); }
+  }
+
+  @keyframes orbit4 {
+    0% { transform: translate(-50%, -50%) rotate(135deg) translateX(140px) rotate(-135deg); }
+    25% { transform: translate(-50%, -50%) rotate(225deg) translateX(145px) rotate(-225deg); }
+    50% { transform: translate(-50%, -50%) rotate(315deg) translateX(140px) rotate(-315deg); }
+    75% { transform: translate(-50%, -50%) rotate(405deg) translateX(135px) rotate(-405deg); }
+    100% { transform: translate(-50%, -50%) rotate(495deg) translateX(140px) rotate(-495deg); }
+  }
+
+  @keyframes orbit5 {
+    0% { transform: translate(-50%, -50%) rotate(180deg) translateX(160px) rotate(-180deg); }
+    25% { transform: translate(-50%, -50%) rotate(270deg) translateX(165px) rotate(-270deg); }
+    50% { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
+    75% { transform: translate(-50%, -50%) rotate(450deg) translateX(155px) rotate(-450deg); }
+    100% { transform: translate(-50%, -50%) rotate(540deg) translateX(160px) rotate(-540deg); }
+  }
+
+  @keyframes orbit6 {
+    0% { transform: translate(-50%, -50%) rotate(225deg) translateX(180px) rotate(-225deg); }
+    25% { transform: translate(-50%, -50%) rotate(315deg) translateX(185px) rotate(-315deg); }
+    50% { transform: translate(-50%, -50%) rotate(405deg) translateX(180px) rotate(-405deg); }
+    75% { transform: translate(-50%, -50%) rotate(495deg) translateX(175px) rotate(-495deg); }
+    100% { transform: translate(-50%, -50%) rotate(585deg) translateX(180px) rotate(-585deg); }
+  }
+
+  @keyframes orbit7 {
+    0% { transform: translate(-50%, -50%) rotate(270deg) translateX(200px) rotate(-270deg); }
+    25% { transform: translate(-50%, -50%) rotate(360deg) translateX(205px) rotate(-360deg); }
+    50% { transform: translate(-50%, -50%) rotate(450deg) translateX(200px) rotate(-450deg); }
+    75% { transform: translate(-50%, -50%) rotate(540deg) translateX(195px) rotate(-540deg); }
+    100% { transform: translate(-50%, -50%) rotate(630deg) translateX(200px) rotate(-630deg); }
   }
   
   @media (max-width: 768px) {
-    .additional-content {
-      padding: 2rem;
+    .about-content {
+      padding: 0 1rem;
+    }
+
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .intro-card, .story-card, .skills-section {
+      padding: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
     }
 
     .tech-orbit {
@@ -338,52 +517,71 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       height: 250px;
     }
 
-    .tech-item {
+    .tech-text {
       font-size: 0.8rem;
       padding: 0.4rem 0.8rem;
-      transform-origin: 125px 125px; /* Center of the 250px container */
     }
 
-    .tech-1 {
-      transform: translate(-50%, -50%) rotate(0deg) translateX(90px) rotate(0deg);
+    .center-dot {
+      width: 10px;
+      height: 10px;
     }
 
-    .tech-2 {
-      transform: translate(-50%, -50%) rotate(51.4deg) translateX(90px) rotate(-51.4deg);
+    /* Mobile orbital paths - scaled down */
+    @keyframes orbit1 {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
+      25% { transform: translate(-50%, -50%) rotate(90deg) translateX(65px) rotate(-90deg); }
+      50% { transform: translate(-50%, -50%) rotate(180deg) translateX(60px) rotate(-180deg); }
+      75% { transform: translate(-50%, -50%) rotate(270deg) translateX(55px) rotate(-270deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
     }
 
-    .tech-3 {
-      transform: translate(-50%, -50%) rotate(102.8deg) translateX(90px) rotate(-102.8deg);
+    @keyframes orbit2 {
+      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(75px) rotate(-45deg); }
+      25% { transform: translate(-50%, -50%) rotate(135deg) translateX(80px) rotate(-135deg); }
+      50% { transform: translate(-50%, -50%) rotate(225deg) translateX(75px) rotate(-225deg); }
+      75% { transform: translate(-50%, -50%) rotate(315deg) translateX(70px) rotate(-315deg); }
+      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(75px) rotate(-405deg); }
     }
 
-    .tech-4 {
-      transform: translate(-50%, -50%) rotate(154.2deg) translateX(90px) rotate(-154.2deg);
+    @keyframes orbit3 {
+      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(90px) rotate(-90deg); }
+      25% { transform: translate(-50%, -50%) rotate(180deg) translateX(95px) rotate(-180deg); }
+      50% { transform: translate(-50%, -50%) rotate(270deg) translateX(90px) rotate(-270deg); }
+      75% { transform: translate(-50%, -50%) rotate(360deg) translateX(85px) rotate(-360deg); }
+      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(90px) rotate(-450deg); }
     }
 
-    .tech-5 {
-      transform: translate(-50%, -50%) rotate(205.6deg) translateX(90px) rotate(-205.6deg);
+    @keyframes orbit4 {
+      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(105px) rotate(-135deg); }
+      25% { transform: translate(-50%, -50%) rotate(225deg) translateX(110px) rotate(-225deg); }
+      50% { transform: translate(-50%, -50%) rotate(315deg) translateX(105px) rotate(-315deg); }
+      75% { transform: translate(-50%, -50%) rotate(405deg) translateX(100px) rotate(-405deg); }
+      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(105px) rotate(-495deg); }
     }
 
-    .tech-6 {
-      transform: translate(-50%, -50%) rotate(257deg) translateX(90px) rotate(-257deg);
+    @keyframes orbit5 {
+      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(120px) rotate(-180deg); }
+      25% { transform: translate(-50%, -50%) rotate(270deg) translateX(125px) rotate(-270deg); }
+      50% { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
+      75% { transform: translate(-50%, -50%) rotate(450deg) translateX(115px) rotate(-450deg); }
+      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(120px) rotate(-540deg); }
     }
 
-    .tech-7 {
-      transform: translate(-50%, -50%) rotate(308.4deg) translateX(90px) rotate(-308.4deg);
+    @keyframes orbit6 {
+      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(135px) rotate(-225deg); }
+      25% { transform: translate(-50%, -50%) rotate(315deg) translateX(140px) rotate(-315deg); }
+      50% { transform: translate(-50%, -50%) rotate(405deg) translateX(135px) rotate(-405deg); }
+      75% { transform: translate(-50%, -50%) rotate(495deg) translateX(130px) rotate(-495deg); }
+      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(135px) rotate(-585deg); }
     }
 
-    @keyframes orbit {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(90px) rotate(0deg);
-        opacity: 0.6;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(90px) rotate(-360deg);
-        opacity: 0.6;
-      }
+    @keyframes orbit7 {
+      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(150px) rotate(-270deg); }
+      25% { transform: translate(-50%, -50%) rotate(360deg) translateX(155px) rotate(-360deg); }
+      50% { transform: translate(-50%, -50%) rotate(450deg) translateX(150px) rotate(-450deg); }
+      75% { transform: translate(-50%, -50%) rotate(540deg) translateX(145px) rotate(-540deg); }
+      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(150px) rotate(-630deg); }
     }
   }
 </style>
