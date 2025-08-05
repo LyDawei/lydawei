@@ -11,7 +11,9 @@
   "dependencies": {
     "astro": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "keywords": [
     "astro",
     "blog",
