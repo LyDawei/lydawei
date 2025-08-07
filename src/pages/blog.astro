@@ -206,17 +206,88 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 
   /* Responsive */
   @media (max-width: 768px) {
+    .blog-container {
+      max-width: 100%;
+      padding: 0 0.5rem;
+    }
+
+    /* Mobile particle optimization */
+    .particle {
+      width: 2px;
+      height: 2px;
+    }
+
+    .particle:nth-child(4), .particle:nth-child(5) {
+      display: none; /* Hide extra particles on mobile */
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
     .animated-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      line-height: 1.5;
     }
     
     .empty-content {
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
+      margin: 0 0.25rem;
+      border-radius: 8px;
     }
     
     .code-block {
-      padding: 1.5rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    .empty-message {
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      line-height: 1.5;
+      padding: 0 0.5rem;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    .particle {
+      display: none; /* Hide particles on very small screens */
+    }
+
+    .blog-container {
+      padding: 0 0.25rem;
+    }
+
+    .animated-title {
+      font-size: 1.6rem;
+    }
+
+    .subtitle {
       font-size: 0.9rem;
+    }
+
+    .empty-content {
+      padding: 1.2rem 0.8rem;
+    }
+
+    .code-block {
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .empty-message {
+      font-size: 0.9rem;
+      margin-top: 1.2rem;
     }
   }
 </style>

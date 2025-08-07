@@ -1,17 +1,21 @@
 ---
 const { title = "David Ly" } = Astro.props;
 import.meta.env.BASE_URL;
+
+// Determine if we're on the home page
+const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <style>
       body {
         font-family: sans-serif;
         max-width: 1200px;
-        margin: 4rem auto;
+        margin: 2rem auto;
         line-height: 1.6;
         padding: 0 1rem;
         background-color: #1a1a1a;
@@ -30,6 +34,151 @@ import.meta.env.BASE_URL;
         font-size: 0.9rem;
         opacity: 0.8;
         text-align: center;
+      }
+
+      /* Enhanced Navigation */
+      header {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        border-radius: 12px;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        border: 1px solid #404040;
+        position: relative;
+        overflow: hidden;
+        animation: slideInDown 0.8s ease-out;
+        transition: all 0.3s ease;
+        margin-top: 0;
+        margin-bottom: 3rem;
+      }
+
+      header:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        border-color: #64b5f6;
+      }
+
+      header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(100, 181, 246, 0.05) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .nav-link {
+        color: #c0c0c0;
+        text-decoration: none;
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 500;
+        position: relative;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+        background: linear-gradient(135deg, transparent, transparent);
+        overflow: hidden;
+      }
+
+      .nav-link:hover {
+        color: #64b5f6;
+        background: linear-gradient(135deg, rgba(100, 181, 246, 0.1), rgba(100, 181, 246, 0.05));
+        border-color: rgba(100, 181, 246, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(100, 181, 246, 0.2);
+      }
+
+      .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s ease;
+        border-radius: 8px;
+      }
+
+      .nav-link:hover::before {
+        left: 100%;
+      }
+
+      .nav-separator {
+        color: #505050;
+        font-weight: 300;
+        user-select: none;
+      }
+
+      /* Floating Particles */
+      .particles-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: #64b5f6;
+        border-radius: 50%;
+        opacity: 0.4;
+      }
+
+      .particle:nth-child(1) {
+        left: 15%;
+        top: 20%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .particle:nth-child(2) {
+        left: 75%;
+        top: 60%;
+        animation: float 10s ease-in-out infinite 2s;
+      }
+
+      .particle:nth-child(3) {
+        left: 45%;
+        top: 80%;
+        animation: float 6s ease-in-out infinite 4s;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.4;
+        }
+        50% {
+          transform: translateY(-80px) rotate(180deg);
+          opacity: 0.8;
+        }
       }
       
       .main-layout {
@@ -243,31 +392,101 @@ import.meta.env.BASE_URL;
       }
       
       @media (max-width: 768px) {
+        body {
+          margin: 1rem auto;
+          padding: 0 0.5rem;
+        }
+
         .main-layout {
           flex-direction: column;
+          gap: 1.5rem;
+          margin-top: 1.5rem;
         }
         
         .profile-card {
           flex: none;
           align-self: center;
           position: static;
+          max-width: none;
+          margin: 0 0.5rem;
+          padding: 1.2rem;
+        }
+
+        /* Hide profile card on non-home pages for mobile */
+        .profile-card.hide-on-mobile {
+          display: none;
         }
         
         .profile-card img {
-          width: 150px;
-          height: 150px;
+          width: 120px;
+          height: 120px;
+        }
+
+        .profile-summary p {
+          font-size: 0.8rem;
+        }
+
+        .skills li {
+          font-size: 0.75rem;
+          padding: 0.3rem 0.6rem;
+        }
+
+        header {
+          padding: 0.8rem 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .nav-links {
+          gap: 0.8rem;
+          flex-wrap: wrap;
+        }
+
+        .nav-link {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-separator {
+          display: none;
+        }
+
+        footer {
+          margin-top: 2rem;
+          font-size: 0.8rem;
+          padding: 1rem;
+        }
+
+        /* Mobile particles - fewer and smaller */
+        .particle {
+          width: 2px;
+          height: 2px;
+        }
+
+        .particle:nth-child(3) {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
+    <!-- Floating particles background -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    
     <header>
-      <a href={`${import.meta.env.BASE_URL}`}>Home</a> · 
-      <a href={`${import.meta.env.BASE_URL}about`}>About</a> · 
-      <a href={`${import.meta.env.BASE_URL}blog`}>Blog</a>
+      <nav class="nav-links">
+        <a href={`${import.meta.env.BASE_URL}`} class="nav-link">Home</a>
+        <span class="nav-separator">·</span>
+        <a href={`${import.meta.env.BASE_URL}about`} class="nav-link">About</a>
+        <span class="nav-separator">·</span>
+        <a href={`${import.meta.env.BASE_URL}blog`} class="nav-link">Blog</a>
+      </nav>
     </header>
     <div class="main-layout">
-      <aside class="profile-card">
+      <aside class={`profile-card ${!isHomePage ? 'hide-on-mobile' : ''}`}>
         <img src="/profile.jpg" alt="David Ly" />
         <div class="profile-summary">
           <p>Hi, I'm David! I'm a passionate developer who loves building web applications and exploring new technologies.</p>

@@ -404,20 +404,120 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   }
   
   @media (max-width: 768px) {
+    /* Mobile particle optimization */
+    .particle {
+      width: 2px;
+      height: 2px;
+    }
+
+    .particle:nth-child(3) {
+      display: none; /* Hide third particle on mobile for performance */
+    }
+
+    .home-content {
+      max-width: 100%;
+      padding: 0 0.5rem;
+    }
+
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    
+    .animated-intro {
+      font-size: 1rem;
+      padding: 1rem;
+      margin: 0 0.25rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
     }
     
     .focus-grid, .links-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
-    .animated-intro {
-      padding: 1.2rem;
+    .focus-item, .link-card {
+      margin: 0 0.25rem;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .focus-item h3, .link-card h3 {
+      font-size: 1rem;
+    }
+
+    .focus-item p, .link-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
     .animated-cta {
-      padding: 1.5rem;
+      padding: 1.2rem;
+      margin: 0 0.25rem;
+      font-size: 1rem;
+    }
+
+    /* Reduce animation intensity on mobile */
+    .focus-item:hover, .link-card:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+
+    .animated-cta:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    .particle {
+      display: none; /* Hide particles on very small screens for performance */
+    }
+
+    .home-content {
+      padding: 0 0.25rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    .animated-intro {
+      font-size: 0.95rem;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .focus-item, .link-card {
+      padding: 0.8rem;
+    }
+
+    .focus-item h3, .link-card h3 {
+      font-size: 0.95rem;
+    }
+
+    .focus-item p, .link-card p {
+      font-size: 0.85rem;
+    }
+
+    .animated-cta {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Disable hover effects on touch devices */
+    .focus-item:hover, .link-card:hover, .animated-cta:hover {
+      transform: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
   }
 </style>

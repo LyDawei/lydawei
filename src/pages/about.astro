@@ -3,13 +3,6 @@ import AboutLayout from "../layouts/AboutLayout.astro"
 ---
 
 <AboutLayout title="About David Ly">
-  <!-- Floating particles background -->
-  <div class="particles-container">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-  </div>
-
   <div class="about-content">
     
     <section class="intro-section animated-section">
@@ -78,52 +71,6 @@ import AboutLayout from "../layouts/AboutLayout.astro"
 </AboutLayout>
 
 <style>
-  /* Floating Particles */
-  .particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: #64b5f6;
-    border-radius: 50%;
-    opacity: 0.4;
-  }
-
-  .particle:nth-child(1) {
-    left: 15%;
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .particle:nth-child(2) {
-    left: 75%;
-    animation: float 10s ease-in-out infinite 2s;
-  }
-
-  .particle:nth-child(3) {
-    left: 45%;
-    animation: float 6s ease-in-out infinite 4s;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0.4;
-    }
-    50% {
-      transform: translateY(-80px) rotate(180deg);
-      opacity: 0.8;
-    }
-  }
-
   .about-content {
     max-width: 800px;
     position: relative;
@@ -496,92 +443,186 @@ import AboutLayout from "../layouts/AboutLayout.astro"
   
   @media (max-width: 768px) {
     .about-content {
-      padding: 0 1rem;
+      padding: 0;
+      max-width: 100%;
     }
 
     .story-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
+      margin-top: 0.5rem;
     }
 
     .intro-card, .story-card, .skills-section {
-      padding: 1.2rem;
+      padding: 1rem;
+      margin: 0 0.5rem;
     }
 
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-card {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .story-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .story-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Skills section mobile optimization */
+    .skills-section {
+      padding: 1.5rem 1rem;
     }
 
     .tech-orbit {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
     }
 
     .tech-text {
-      font-size: 0.8rem;
-      padding: 0.4rem 0.8rem;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
     }
 
     .center-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
     }
 
-    /* Mobile orbital paths - scaled down */
+    /* Simplified mobile orbital paths - much smaller and closer */
     @keyframes orbit1 {
-      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
-      25% { transform: translate(-50%, -50%) rotate(90deg) translateX(65px) rotate(-90deg); }
-      50% { transform: translate(-50%, -50%) rotate(180deg) translateX(60px) rotate(-180deg); }
-      75% { transform: translate(-50%, -50%) rotate(270deg) translateX(55px) rotate(-270deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg); }
+      25% { transform: translate(-50%, -50%) rotate(90deg) translateX(42px) rotate(-90deg); }
+      50% { transform: translate(-50%, -50%) rotate(180deg) translateX(40px) rotate(-180deg); }
+      75% { transform: translate(-50%, -50%) rotate(270deg) translateX(38px) rotate(-270deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg); }
     }
 
     @keyframes orbit2 {
-      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(75px) rotate(-45deg); }
-      25% { transform: translate(-50%, -50%) rotate(135deg) translateX(80px) rotate(-135deg); }
-      50% { transform: translate(-50%, -50%) rotate(225deg) translateX(75px) rotate(-225deg); }
-      75% { transform: translate(-50%, -50%) rotate(315deg) translateX(70px) rotate(-315deg); }
-      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(75px) rotate(-405deg); }
+      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(55px) rotate(-45deg); }
+      25% { transform: translate(-50%, -50%) rotate(135deg) translateX(57px) rotate(-135deg); }
+      50% { transform: translate(-50%, -50%) rotate(225deg) translateX(55px) rotate(-225deg); }
+      75% { transform: translate(-50%, -50%) rotate(315deg) translateX(53px) rotate(-315deg); }
+      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(55px) rotate(-405deg); }
     }
 
     @keyframes orbit3 {
-      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(90px) rotate(-90deg); }
-      25% { transform: translate(-50%, -50%) rotate(180deg) translateX(95px) rotate(-180deg); }
-      50% { transform: translate(-50%, -50%) rotate(270deg) translateX(90px) rotate(-270deg); }
-      75% { transform: translate(-50%, -50%) rotate(360deg) translateX(85px) rotate(-360deg); }
-      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(90px) rotate(-450deg); }
+      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(70px) rotate(-90deg); }
+      25% { transform: translate(-50%, -50%) rotate(180deg) translateX(72px) rotate(-180deg); }
+      50% { transform: translate(-50%, -50%) rotate(270deg) translateX(70px) rotate(-270deg); }
+      75% { transform: translate(-50%, -50%) rotate(360deg) translateX(68px) rotate(-360deg); }
+      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(70px) rotate(-450deg); }
     }
 
     @keyframes orbit4 {
-      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(105px) rotate(-135deg); }
-      25% { transform: translate(-50%, -50%) rotate(225deg) translateX(110px) rotate(-225deg); }
-      50% { transform: translate(-50%, -50%) rotate(315deg) translateX(105px) rotate(-315deg); }
-      75% { transform: translate(-50%, -50%) rotate(405deg) translateX(100px) rotate(-405deg); }
-      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(105px) rotate(-495deg); }
+      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(85px) rotate(-135deg); }
+      25% { transform: translate(-50%, -50%) rotate(225deg) translateX(87px) rotate(-225deg); }
+      50% { transform: translate(-50%, -50%) rotate(315deg) translateX(85px) rotate(-315deg); }
+      75% { transform: translate(-50%, -50%) rotate(405deg) translateX(83px) rotate(-405deg); }
+      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(85px) rotate(-495deg); }
     }
 
     @keyframes orbit5 {
-      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(120px) rotate(-180deg); }
-      25% { transform: translate(-50%, -50%) rotate(270deg) translateX(125px) rotate(-270deg); }
-      50% { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
-      75% { transform: translate(-50%, -50%) rotate(450deg) translateX(115px) rotate(-450deg); }
-      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(120px) rotate(-540deg); }
+      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(100px) rotate(-180deg); }
+      25% { transform: translate(-50%, -50%) rotate(270deg) translateX(102px) rotate(-270deg); }
+      50% { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+      75% { transform: translate(-50%, -50%) rotate(450deg) translateX(98px) rotate(-450deg); }
+      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(100px) rotate(-540deg); }
     }
 
     @keyframes orbit6 {
-      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(135px) rotate(-225deg); }
-      25% { transform: translate(-50%, -50%) rotate(315deg) translateX(140px) rotate(-315deg); }
-      50% { transform: translate(-50%, -50%) rotate(405deg) translateX(135px) rotate(-405deg); }
-      75% { transform: translate(-50%, -50%) rotate(495deg) translateX(130px) rotate(-495deg); }
-      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(135px) rotate(-585deg); }
+      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(115px) rotate(-225deg); }
+      25% { transform: translate(-50%, -50%) rotate(315deg) translateX(117px) rotate(-315deg); }
+      50% { transform: translate(-50%, -50%) rotate(405deg) translateX(115px) rotate(-405deg); }
+      75% { transform: translate(-50%, -50%) rotate(495deg) translateX(113px) rotate(-495deg); }
+      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(115px) rotate(-585deg); }
     }
 
     @keyframes orbit7 {
-      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(150px) rotate(-270deg); }
-      25% { transform: translate(-50%, -50%) rotate(360deg) translateX(155px) rotate(-360deg); }
-      50% { transform: translate(-50%, -50%) rotate(450deg) translateX(150px) rotate(-450deg); }
-      75% { transform: translate(-50%, -50%) rotate(540deg) translateX(145px) rotate(-540deg); }
-      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(150px) rotate(-630deg); }
+      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(130px) rotate(-270deg); }
+      25% { transform: translate(-50%, -50%) rotate(360deg) translateX(132px) rotate(-360deg); }
+      50% { transform: translate(-50%, -50%) rotate(450deg) translateX(130px) rotate(-450deg); }
+      75% { transform: translate(-50%, -50%) rotate(540deg) translateX(128px) rotate(-540deg); }
+      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(130px) rotate(-630deg); }
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    .about-content {
+      padding: 0;
+    }
+
+    .intro-card, .story-card, .skills-section {
+      margin: 0 0.25rem;
+      padding: 0.8rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .story-card h3 {
+      font-size: 0.95rem;
+    }
+
+    .story-card p, .intro-card p {
+      font-size: 0.85rem;
+    }
+
+    .tech-orbit {
+      width: 180px;
+      height: 180px;
+    }
+
+    .tech-text {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    /* Even more compact orbits for very small screens */
+    @keyframes orbit1 {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(35px) rotate(-360deg); }
+    }
+
+    @keyframes orbit2 {
+      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(45px) rotate(-45deg); }
+      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(45px) rotate(-405deg); }
+    }
+
+    @keyframes orbit3 {
+      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(55px) rotate(-90deg); }
+      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(55px) rotate(-450deg); }
+    }
+
+    @keyframes orbit4 {
+      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(65px) rotate(-135deg); }
+      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(65px) rotate(-495deg); }
+    }
+
+    @keyframes orbit5 {
+      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(75px) rotate(-180deg); }
+      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(75px) rotate(-540deg); }
+    }
+
+    @keyframes orbit6 {
+      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(85px) rotate(-225deg); }
+      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(85px) rotate(-585deg); }
+    }
+
+    @keyframes orbit7 {
+      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(95px) rotate(-270deg); }
+      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(95px) rotate(-630deg); }
     }
   }
 </style>
