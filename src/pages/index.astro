@@ -38,15 +38,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       </div>
     </section>
 
-    <section class="tinkering animated-section">
-      <h2 class="section-title">What I Tinker With</h2>
-      <div class="tinker-grid">
-        <div class="tinker-item">Claude</div>
-        <div class="tinker-item">Codex</div>
-        <div class="tinker-item">Conductor</div>
-      </div>
-    </section>
-
     <section class="quick-links animated-section">
       <h2 class="section-title">Start Here</h2>
       <div class="links-grid">
@@ -176,12 +167,8 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     animation-delay: calc(var(--animation-delay-base) * 2); /* 0.2s */
   }
 
-  .tinkering {
-    animation-delay: calc(var(--animation-delay-base) * 4); /* 0.4s */
-  }
-
   .quick-links {
-    animation-delay: calc(var(--animation-delay-base) * 5); /* 0.5s */
+    animation-delay: calc(var(--animation-delay-base) * 4); /* 0.4s */
   }
 
   .section-title {
@@ -269,32 +256,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 
   .focus-item:hover p {
     color: var(--color-text-dim);
-  }
-
-  /* Tinker Grid */
-  .tinker-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-top: 1rem;
-  }
-
-  .tinker-item {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--radius-full);
-    border: 1px solid #404040;
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    cursor: default;
-  }
-
-  .tinker-item:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary-light);
-    box-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
-    transform: translateY(-2px);
   }
 
   /* Enhanced Link Cards */
