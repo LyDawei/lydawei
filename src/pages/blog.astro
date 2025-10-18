@@ -1,5 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const publishedPosts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <BaseLayout title="David Ly - Blog">
@@ -8,7 +14,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     <!-- Animated Header -->
     <header class="blog-header">
       <h1 class="animated-title">Recent Writing</h1>
-      <p class="subtitle fade-in-up">Coming soon - thoughts on development, leadership, and building better software</p>
+      <p class="subtitle fade-in-up">Thoughts on development, leadership, and building better software</p>
     </header>
 
     <!-- Floating particles background -->
@@ -20,24 +26,55 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       <div class="particle"></div>
     </div>
 
-    <!-- Empty state with animation -->
-    <section class="empty-state">
-      <div class="empty-content">
-        <div class="code-block">
-          <div class="code-line">
-            <span class="keyword">const</span> 
-            <span class="variable">blog</span> 
-            <span class="operator">=</span> 
-            <span class="string">"under construction"</span>
-            <span class="punctuation">;</span>
+    <!-- Blog posts list -->
+    {publishedPosts.length > 0 ? (
+      <section class="posts-list">
+        {publishedPosts.map((post, index) => (
+          <article class="post-card" style={`animation-delay: ${0.1 + index * 0.1}s`}>
+            <div class="post-content">
+              <h2 class="post-title">
+                <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+              </h2>
+              <p class="post-description">{post.data.description}</p>
+              <div class="post-meta">
+                <time datetime={post.data.pubDate}>
+                  {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+                <span class="post-author">by {post.data.author}</span>
+              </div>
+              <div class="post-tags">
+                {post.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div class="card-shine"></div>
+          </article>
+        ))}
+      </section>
+    ) : (
+      <section class="empty-state">
+        <div class="empty-content">
+          <div class="code-block">
+            <div class="code-line">
+              <span class="keyword">const</span>
+              <span class="variable">blog</span>
+              <span class="operator">=</span>
+              <span class="string">"under construction"</span>
+              <span class="punctuation">;</span>
+            </div>
+            <div class="code-line">
+              <span class="comment">// Stay tuned for content!</span>
+            </div>
           </div>
-          <div class="code-line">
-            <span class="comment">// Stay tuned for content!</span>
-          </div>
+          <p class="empty-message">Check back soon for posts about software development and team leadership.</p>
         </div>
-        <p class="empty-message">Check back soon for posts about software development and team leadership.</p>
-      </div>
-    </section>
+      </section>
+    )}
 
   </div>
 </BaseLayout>
@@ -145,6 +182,112 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       transform: translateY(-100px) rotate(180deg);
       opacity: 1;
     }
+  }
+
+  /* Posts List */
+  .posts-list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .post-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #404040;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  .post-card:hover {
+    transform: translateY(-8px);
+    border-color: #64b5f6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(100, 181, 246, 0.3);
+  }
+
+  .post-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .post-title a {
+    color: #64b5f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .post-title a:hover {
+    color: #90caf9;
+  }
+
+  .post-description {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #808080;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .post-meta time {
+    color: #64b5f6;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background: #2d2d2d;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #90caf9;
+    border: 1px solid #404040;
+    transition: all 0.3s ease;
+  }
+
+  .tag:hover {
+    background: #404040;
+    border-color: #64b5f6;
+  }
+
+  .card-shine {
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(35deg);
+    transition: left 0.5s ease;
+  }
+
+  .post-card:hover .card-shine {
+    left: 100%;
   }
 
   /* Empty State */
