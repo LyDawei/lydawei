@@ -53,10 +53,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         </a>
       </div>
     </section>
-
-    <section class="contact-cta animated-cta">
-      <p>Building something interesting? <strong class="highlight-text">Let's chat.</strong></p>
-    </section>
   </div>
 </BaseLayout>
 
@@ -350,49 +346,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     color: #d0d0d0;
   }
   
-  /* Animated CTA */
-  .animated-cta {
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    border-radius: 12px;
-    font-size: 1.1rem;
-    color: #e0e0e0;
-    border: 1px solid #404040;
-    position: relative;
-    overflow: hidden;
-    animation: slideInUp 0.8s ease-out 1s both;
-    transition: all 0.3s ease;
-  }
-
-  .animated-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    border-color: #64b5f6;
-  }
-
-  .animated-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(100, 181, 246, 0.05) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
-  }
-  
-  .highlight-text {
-    color: #64b5f6;
-    position: relative;
-    animation: glow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from { text-shadow: 0 0 5px rgba(100, 181, 246, 0.5); }
-    to { text-shadow: 0 0 15px rgba(100, 181, 246, 0.8); }
-  }
-  
   a {
     color: #64b5f6;
     font-weight: 500;
@@ -457,19 +410,9 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       line-height: 1.5;
     }
 
-    .animated-cta {
-      padding: 1.2rem;
-      margin: 0 0.25rem;
-      font-size: 1rem;
-    }
-
     /* Reduce animation intensity on mobile */
     .focus-item:hover, .link-card:hover {
       transform: translateY(-4px) scale(1.01);
-    }
-
-    .animated-cta:hover {
-      transform: translateY(-2px);
     }
   }
 
@@ -509,13 +452,8 @@ import BaseLayout from "../layouts/BaseLayout.astro"
       font-size: 0.85rem;
     }
 
-    .animated-cta {
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-
     /* Disable hover effects on touch devices */
-    .focus-item:hover, .link-card:hover, .animated-cta:hover {
+    .focus-item:hover, .link-card:hover {
       transform: none;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
