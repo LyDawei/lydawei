@@ -248,7 +248,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === import.m
         width: 180px;
         height: 180px;
         object-fit: cover;
-        object-position: center 1%;
+        object-position: 35% center;
         border-radius: 50%;
         border: 4px solid #404040;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -257,11 +257,10 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === import.m
         z-index: 2;
         animation: fadeIn 1s ease-out 0.3s both;
         transition: all 0.3s ease;
-        transform: scale(1.15);
       }
 
       .profile-card img:hover {
-        transform: scale(1.2);
+        transform: scale(1.05);
         border-color: #64b5f6;
         box-shadow: 0 6px 20px rgba(100, 181, 246, 0.3);
       }
@@ -489,7 +488,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === import.m
     </header>
     <div class="main-layout">
       <aside class={`profile-card ${!isHomePage ? 'hide-on-mobile' : ''}`}>
-        <img src="/assets/profile.png" alt="David Ly" />
+        <img src="/assets/profile.jpg" alt="David Ly" />
         <div class="profile-summary">
           <p>Hi, I'm David! I'm a passionate developer who loves building web applications and exploring new technologies.</p>
           <p>When I'm not coding, you can find me learning about the latest tech trends or working on side projects.</p>
