@@ -39,32 +39,17 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       </div>
     </section>
 
-    <!-- Animated skills visualization -->
+    <!-- Tech stack tags -->
     <section class="skills-section animated-section">
       <h2 class="section-title">What I Tinker With</h2>
-      <div class="tech-orbit">
-        <div class="tech-item tech-1">
-          <span class="tech-text">TypeScript</span>
-        </div>
-        <div class="tech-item tech-2">
-          <span class="tech-text">React</span>
-        </div>
-        <div class="tech-item tech-3">
-          <span class="tech-text">Node.js</span>
-        </div>
-        <div class="tech-item tech-4">
-          <span class="tech-text">Astro</span>
-        </div>
-        <div class="tech-item tech-5">
-          <span class="tech-text">Godot</span>
-        </div>
-        <div class="tech-item tech-6">
-          <span class="tech-text">Python</span>
-        </div>
-        <div class="tech-item tech-7">
-          <span class="tech-text">JavaScript</span>
-        </div>
-        <div class="center-dot"></div>
+      <div class="tech-tags">
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Astro</span>
+        <span class="tech-tag">Godot</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">JavaScript</span>
       </div>
     </section>
   </div>
@@ -295,47 +280,16 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     animation: pulse 4s ease-in-out infinite;
   }
 
-  .tech-orbit {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
   }
 
-  .center-dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    background: radial-gradient(circle, #64b5f6 0%, #42a5f5 70%, #1e88e5 100%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: centerPulse 3s ease-in-out infinite;
-    z-index: 3;
-    box-shadow: 0 0 20px rgba(100, 181, 246, 0.6);
-  }
-
-  @keyframes centerPulse {
-    0%, 100% { 
-      transform: translate(-50%, -50%) scale(1);
-      box-shadow: 0 0 20px rgba(100, 181, 246, 0.6);
-    }
-    50% { 
-      transform: translate(-50%, -50%) scale(1.3);
-      box-shadow: 0 0 30px rgba(100, 181, 246, 0.9);
-    }
-  }
-
-  .tech-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-  }
-
-  .tech-text {
-    display: block;
+  .tech-tag {
+    display: inline-block;
     padding: 0.5rem 1rem;
     background: rgba(100, 181, 246, 0.15);
     border: 1px solid rgba(100, 181, 246, 0.4);
@@ -348,39 +302,10 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     transition: all 0.3s ease;
   }
 
-  .tech-text:hover {
+  .tech-tag:hover {
     background: rgba(100, 181, 246, 0.25);
-    transform: scale(1.05);
+    transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
-  }
-
-  /* Static positions for tech items */
-  .tech-1 {
-    transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg);
-  }
-
-  .tech-2 {
-    transform: translate(-50%, -50%) rotate(45deg) translateX(100px) rotate(-45deg);
-  }
-
-  .tech-3 {
-    transform: translate(-50%, -50%) rotate(90deg) translateX(120px) rotate(-90deg);
-  }
-
-  .tech-4 {
-    transform: translate(-50%, -50%) rotate(135deg) translateX(140px) rotate(-135deg);
-  }
-
-  .tech-5 {
-    transform: translate(-50%, -50%) rotate(180deg) translateX(160px) rotate(-180deg);
-  }
-
-  .tech-6 {
-    transform: translate(-50%, -50%) rotate(225deg) translateX(180px) rotate(-225deg);
-  }
-
-  .tech-7 {
-    transform: translate(-50%, -50%) rotate(270deg) translateX(200px) rotate(-270deg);
   }
   
   @media (max-width: 768px) {
@@ -425,48 +350,9 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       padding: 1.5rem 1rem;
     }
 
-    .tech-orbit {
-      width: 200px;
-      height: 200px;
-    }
-
-    .tech-text {
-      font-size: 0.7rem;
-      padding: 0.3rem 0.6rem;
-    }
-
-    .center-dot {
-      width: 8px;
-      height: 8px;
-    }
-
-    /* Static positions for mobile - tablet */
-    .tech-1 {
-      transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg);
-    }
-
-    .tech-2 {
-      transform: translate(-50%, -50%) rotate(45deg) translateX(55px) rotate(-45deg);
-    }
-
-    .tech-3 {
-      transform: translate(-50%, -50%) rotate(90deg) translateX(70px) rotate(-90deg);
-    }
-
-    .tech-4 {
-      transform: translate(-50%, -50%) rotate(135deg) translateX(85px) rotate(-135deg);
-    }
-
-    .tech-5 {
-      transform: translate(-50%, -50%) rotate(180deg) translateX(100px) rotate(-180deg);
-    }
-
-    .tech-6 {
-      transform: translate(-50%, -50%) rotate(225deg) translateX(115px) rotate(-225deg);
-    }
-
-    .tech-7 {
-      transform: translate(-50%, -50%) rotate(270deg) translateX(130px) rotate(-270deg);
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
     }
   }
 
@@ -493,43 +379,9 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       font-size: 0.85rem;
     }
 
-    .tech-orbit {
-      width: 180px;
-      height: 180px;
-    }
-
-    .tech-text {
-      font-size: 0.65rem;
-      padding: 0.25rem 0.5rem;
-    }
-
-    /* Static positions for very small screens */
-    .tech-1 {
-      transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg);
-    }
-
-    .tech-2 {
-      transform: translate(-50%, -50%) rotate(45deg) translateX(45px) rotate(-45deg);
-    }
-
-    .tech-3 {
-      transform: translate(-50%, -50%) rotate(90deg) translateX(55px) rotate(-90deg);
-    }
-
-    .tech-4 {
-      transform: translate(-50%, -50%) rotate(135deg) translateX(65px) rotate(-135deg);
-    }
-
-    .tech-5 {
-      transform: translate(-50%, -50%) rotate(180deg) translateX(75px) rotate(-180deg);
-    }
-
-    .tech-6 {
-      transform: translate(-50%, -50%) rotate(225deg) translateX(85px) rotate(-225deg);
-    }
-
-    .tech-7 {
-      transform: translate(-50%, -50%) rotate(270deg) translateX(95px) rotate(-270deg);
+    .tech-tag {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.7rem;
     }
   }
 </style>
