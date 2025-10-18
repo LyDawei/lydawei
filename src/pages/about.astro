@@ -331,7 +331,6 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     position: absolute;
     top: 50%;
     left: 50%;
-    transform-origin: 0 0;
     z-index: 2;
   }
 
@@ -355,90 +354,33 @@ import AboutLayout from "../layouts/AboutLayout.astro"
     box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
   }
 
-  /* Gravitational orbital mechanics with different speeds and elliptical paths */
+  /* Static positions for tech items */
   .tech-1 {
-    animation: orbit1 15s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg);
   }
 
   .tech-2 {
-    animation: orbit2 18s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(45deg) translateX(100px) rotate(-45deg);
   }
 
   .tech-3 {
-    animation: orbit3 22s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(90deg) translateX(120px) rotate(-90deg);
   }
 
   .tech-4 {
-    animation: orbit4 25s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(135deg) translateX(140px) rotate(-135deg);
   }
 
   .tech-5 {
-    animation: orbit5 28s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(180deg) translateX(160px) rotate(-180deg);
   }
 
   .tech-6 {
-    animation: orbit6 32s ease-in-out infinite;
+    transform: translate(-50%, -50%) rotate(225deg) translateX(180px) rotate(-225deg);
   }
 
   .tech-7 {
-    animation: orbit7 35s ease-in-out infinite;
-  }
-
-  /* Realistic orbital paths with elliptical motion and varying speeds */
-  @keyframes orbit1 {
-    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
-    25% { transform: translate(-50%, -50%) rotate(90deg) translateX(85px) rotate(-90deg); }
-    50% { transform: translate(-50%, -50%) rotate(180deg) translateX(80px) rotate(-180deg); }
-    75% { transform: translate(-50%, -50%) rotate(270deg) translateX(75px) rotate(-270deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
-  }
-
-  @keyframes orbit2 {
-    0% { transform: translate(-50%, -50%) rotate(45deg) translateX(100px) rotate(-45deg); }
-    25% { transform: translate(-50%, -50%) rotate(135deg) translateX(105px) rotate(-135deg); }
-    50% { transform: translate(-50%, -50%) rotate(225deg) translateX(100px) rotate(-225deg); }
-    75% { transform: translate(-50%, -50%) rotate(315deg) translateX(95px) rotate(-315deg); }
-    100% { transform: translate(-50%, -50%) rotate(405deg) translateX(100px) rotate(-405deg); }
-  }
-
-  @keyframes orbit3 {
-    0% { transform: translate(-50%, -50%) rotate(90deg) translateX(120px) rotate(-90deg); }
-    25% { transform: translate(-50%, -50%) rotate(180deg) translateX(125px) rotate(-180deg); }
-    50% { transform: translate(-50%, -50%) rotate(270deg) translateX(120px) rotate(-270deg); }
-    75% { transform: translate(-50%, -50%) rotate(360deg) translateX(115px) rotate(-360deg); }
-    100% { transform: translate(-50%, -50%) rotate(450deg) translateX(120px) rotate(-450deg); }
-  }
-
-  @keyframes orbit4 {
-    0% { transform: translate(-50%, -50%) rotate(135deg) translateX(140px) rotate(-135deg); }
-    25% { transform: translate(-50%, -50%) rotate(225deg) translateX(145px) rotate(-225deg); }
-    50% { transform: translate(-50%, -50%) rotate(315deg) translateX(140px) rotate(-315deg); }
-    75% { transform: translate(-50%, -50%) rotate(405deg) translateX(135px) rotate(-405deg); }
-    100% { transform: translate(-50%, -50%) rotate(495deg) translateX(140px) rotate(-495deg); }
-  }
-
-  @keyframes orbit5 {
-    0% { transform: translate(-50%, -50%) rotate(180deg) translateX(160px) rotate(-180deg); }
-    25% { transform: translate(-50%, -50%) rotate(270deg) translateX(165px) rotate(-270deg); }
-    50% { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
-    75% { transform: translate(-50%, -50%) rotate(450deg) translateX(155px) rotate(-450deg); }
-    100% { transform: translate(-50%, -50%) rotate(540deg) translateX(160px) rotate(-540deg); }
-  }
-
-  @keyframes orbit6 {
-    0% { transform: translate(-50%, -50%) rotate(225deg) translateX(180px) rotate(-225deg); }
-    25% { transform: translate(-50%, -50%) rotate(315deg) translateX(185px) rotate(-315deg); }
-    50% { transform: translate(-50%, -50%) rotate(405deg) translateX(180px) rotate(-405deg); }
-    75% { transform: translate(-50%, -50%) rotate(495deg) translateX(175px) rotate(-495deg); }
-    100% { transform: translate(-50%, -50%) rotate(585deg) translateX(180px) rotate(-585deg); }
-  }
-
-  @keyframes orbit7 {
-    0% { transform: translate(-50%, -50%) rotate(270deg) translateX(200px) rotate(-270deg); }
-    25% { transform: translate(-50%, -50%) rotate(360deg) translateX(205px) rotate(-360deg); }
-    50% { transform: translate(-50%, -50%) rotate(450deg) translateX(200px) rotate(-450deg); }
-    75% { transform: translate(-50%, -50%) rotate(540deg) translateX(195px) rotate(-540deg); }
-    100% { transform: translate(-50%, -50%) rotate(630deg) translateX(200px) rotate(-630deg); }
+    transform: translate(-50%, -50%) rotate(270deg) translateX(200px) rotate(-270deg);
   }
   
   @media (max-width: 768px) {
@@ -498,61 +440,33 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       height: 8px;
     }
 
-    /* Simplified mobile orbital paths - much smaller and closer */
-    @keyframes orbit1 {
-      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg); }
-      25% { transform: translate(-50%, -50%) rotate(90deg) translateX(42px) rotate(-90deg); }
-      50% { transform: translate(-50%, -50%) rotate(180deg) translateX(40px) rotate(-180deg); }
-      75% { transform: translate(-50%, -50%) rotate(270deg) translateX(38px) rotate(-270deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg); }
+    /* Static positions for mobile - tablet */
+    .tech-1 {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg);
     }
 
-    @keyframes orbit2 {
-      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(55px) rotate(-45deg); }
-      25% { transform: translate(-50%, -50%) rotate(135deg) translateX(57px) rotate(-135deg); }
-      50% { transform: translate(-50%, -50%) rotate(225deg) translateX(55px) rotate(-225deg); }
-      75% { transform: translate(-50%, -50%) rotate(315deg) translateX(53px) rotate(-315deg); }
-      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(55px) rotate(-405deg); }
+    .tech-2 {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(55px) rotate(-45deg);
     }
 
-    @keyframes orbit3 {
-      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(70px) rotate(-90deg); }
-      25% { transform: translate(-50%, -50%) rotate(180deg) translateX(72px) rotate(-180deg); }
-      50% { transform: translate(-50%, -50%) rotate(270deg) translateX(70px) rotate(-270deg); }
-      75% { transform: translate(-50%, -50%) rotate(360deg) translateX(68px) rotate(-360deg); }
-      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(70px) rotate(-450deg); }
+    .tech-3 {
+      transform: translate(-50%, -50%) rotate(90deg) translateX(70px) rotate(-90deg);
     }
 
-    @keyframes orbit4 {
-      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(85px) rotate(-135deg); }
-      25% { transform: translate(-50%, -50%) rotate(225deg) translateX(87px) rotate(-225deg); }
-      50% { transform: translate(-50%, -50%) rotate(315deg) translateX(85px) rotate(-315deg); }
-      75% { transform: translate(-50%, -50%) rotate(405deg) translateX(83px) rotate(-405deg); }
-      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(85px) rotate(-495deg); }
+    .tech-4 {
+      transform: translate(-50%, -50%) rotate(135deg) translateX(85px) rotate(-135deg);
     }
 
-    @keyframes orbit5 {
-      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(100px) rotate(-180deg); }
-      25% { transform: translate(-50%, -50%) rotate(270deg) translateX(102px) rotate(-270deg); }
-      50% { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
-      75% { transform: translate(-50%, -50%) rotate(450deg) translateX(98px) rotate(-450deg); }
-      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(100px) rotate(-540deg); }
+    .tech-5 {
+      transform: translate(-50%, -50%) rotate(180deg) translateX(100px) rotate(-180deg);
     }
 
-    @keyframes orbit6 {
-      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(115px) rotate(-225deg); }
-      25% { transform: translate(-50%, -50%) rotate(315deg) translateX(117px) rotate(-315deg); }
-      50% { transform: translate(-50%, -50%) rotate(405deg) translateX(115px) rotate(-405deg); }
-      75% { transform: translate(-50%, -50%) rotate(495deg) translateX(113px) rotate(-495deg); }
-      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(115px) rotate(-585deg); }
+    .tech-6 {
+      transform: translate(-50%, -50%) rotate(225deg) translateX(115px) rotate(-225deg);
     }
 
-    @keyframes orbit7 {
-      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(130px) rotate(-270deg); }
-      25% { transform: translate(-50%, -50%) rotate(360deg) translateX(132px) rotate(-360deg); }
-      50% { transform: translate(-50%, -50%) rotate(450deg) translateX(130px) rotate(-450deg); }
-      75% { transform: translate(-50%, -50%) rotate(540deg) translateX(128px) rotate(-540deg); }
-      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(130px) rotate(-630deg); }
+    .tech-7 {
+      transform: translate(-50%, -50%) rotate(270deg) translateX(130px) rotate(-270deg);
     }
   }
 
@@ -589,40 +503,33 @@ import AboutLayout from "../layouts/AboutLayout.astro"
       padding: 0.25rem 0.5rem;
     }
 
-    /* Even more compact orbits for very small screens */
-    @keyframes orbit1 {
-      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg) translateX(35px) rotate(-360deg); }
+    /* Static positions for very small screens */
+    .tech-1 {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg);
     }
 
-    @keyframes orbit2 {
-      0% { transform: translate(-50%, -50%) rotate(45deg) translateX(45px) rotate(-45deg); }
-      100% { transform: translate(-50%, -50%) rotate(405deg) translateX(45px) rotate(-405deg); }
+    .tech-2 {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(45px) rotate(-45deg);
     }
 
-    @keyframes orbit3 {
-      0% { transform: translate(-50%, -50%) rotate(90deg) translateX(55px) rotate(-90deg); }
-      100% { transform: translate(-50%, -50%) rotate(450deg) translateX(55px) rotate(-450deg); }
+    .tech-3 {
+      transform: translate(-50%, -50%) rotate(90deg) translateX(55px) rotate(-90deg);
     }
 
-    @keyframes orbit4 {
-      0% { transform: translate(-50%, -50%) rotate(135deg) translateX(65px) rotate(-135deg); }
-      100% { transform: translate(-50%, -50%) rotate(495deg) translateX(65px) rotate(-495deg); }
+    .tech-4 {
+      transform: translate(-50%, -50%) rotate(135deg) translateX(65px) rotate(-135deg);
     }
 
-    @keyframes orbit5 {
-      0% { transform: translate(-50%, -50%) rotate(180deg) translateX(75px) rotate(-180deg); }
-      100% { transform: translate(-50%, -50%) rotate(540deg) translateX(75px) rotate(-540deg); }
+    .tech-5 {
+      transform: translate(-50%, -50%) rotate(180deg) translateX(75px) rotate(-180deg);
     }
 
-    @keyframes orbit6 {
-      0% { transform: translate(-50%, -50%) rotate(225deg) translateX(85px) rotate(-225deg); }
-      100% { transform: translate(-50%, -50%) rotate(585deg) translateX(85px) rotate(-585deg); }
+    .tech-6 {
+      transform: translate(-50%, -50%) rotate(225deg) translateX(85px) rotate(-225deg);
     }
 
-    @keyframes orbit7 {
-      0% { transform: translate(-50%, -50%) rotate(270deg) translateX(95px) rotate(-270deg); }
-      100% { transform: translate(-50%, -50%) rotate(630deg) translateX(95px) rotate(-630deg); }
+    .tech-7 {
+      transform: translate(-50%, -50%) rotate(270deg) translateX(95px) rotate(-270deg);
     }
   }
 </style>
