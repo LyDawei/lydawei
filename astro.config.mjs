@@ -3,5 +3,9 @@ export default {
   base: '/',
   integrations: [],
   outDir: './dist',
-  trailingSlash: 'ignore'
+  trailingSlash: 'ignore',
+  // Redirect /projects/pokedex to Vercel deployment in dev
+  redirects: {
+    '/projects/pokedex': 'https://pokedex-ai-test.vercel.app/projects/pokedex'
+  }
 }; 

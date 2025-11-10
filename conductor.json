@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "setup": "npm install",
+        "setup": "./setup.sh",
         "run": "npm run dev",
         "runScriptMode": "nonconcurrent"
     }
