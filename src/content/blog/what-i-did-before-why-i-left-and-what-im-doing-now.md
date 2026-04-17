@@ -7,8 +7,6 @@ draft: false
 author: "David Ly"
 ---
 
-# What I did before, why I left, and what I'm doing now
-
 I've been a professional software developer for 11.5 years now. In school, I really thought memorizing algorithms and being able to rewrite sorting algorithms were a testament to my capabilities as a dev — something that would tell companies, "I'm a good dev." It's funny how companies can steer you in the wrong direction. What I've found more valuable as a developer is curiosity, a drive to learn, a willingness to work with others, and pulling your weight.
 
 When I first started my career, I was a consultant at a company called Avanade. I worked with various clients ranging from medical and oil & gas to social media companies. Afterwards, I left and worked in biotech, fintech, and finally at a software company that built software for oil & gas companies. Yeah, I jumped around a bit early on — mostly out of unhappiness, though the pay upgrades were a nice byproduct of it.
