@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^5.18.2"
+    "astro": "^6.4.8"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
