@@ -1,7 +1,7 @@
 ---
 title: "What I did before, why I left, and what I'm doing now"
 description: "A candid look at my 11.5-year journey as a developer—from consulting and toxic teams to rediscovering meaning and embracing AI—with one core lesson: be intentional."
-pubDate: "2025-10-18"
+pubDate: 2025-10-18
 tags: ["career", "software", "ai", "reflection"]
 draft: false
 author: "David Ly"
