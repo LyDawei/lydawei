@@ -1,7 +1,7 @@
 ---
 title: "When Startups Confuse Speed with Progress"
 description: "What happens when a startup has no staging, no requirements, and no ownership. Lessons from an unstable engineering system."
-pubDate: "2026-04-17"
+pubDate: 2026-04-17
 tags: ["career", "software", "startups", "engineering", "reflection"]
 draft: false
 author: "David Ly"

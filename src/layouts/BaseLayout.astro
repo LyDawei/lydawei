@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/profile.jpg';
+
 const { title = "David Ly", description = "David Ly - Senior Full-Stack Developer", image, type = "website", publishedTime, author } = Astro.props;
 import.meta.env.BASE_URL;
 
@@ -663,7 +666,7 @@ const ogImage = image || new URL('/assets/profile.jpg', 'https://lydawei.com').h
     </header>
     <div class="main-layout">
       <aside class={`profile-card ${!isHomePage ? 'hide-on-mobile' : ''}`}>
-        <img src="/assets/profile.jpg" alt="David Ly" />
+        <Image src={profileImage} alt="David Ly" width={360} height={360} />
         <div class="profile-summary">
           <p>Hi, I'm David! I'm a passionate developer who loves building web applications and exploring new technologies.</p>
           <p>When I'm not coding, you can find me learning about the latest tech trends or working on side projects.</p>

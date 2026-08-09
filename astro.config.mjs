@@ -1,7 +1,10 @@
-export default {
+import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+
+export default defineConfig({
   site: 'https://lydawei.com',
   base: '/',
-  integrations: [],
+  integrations: [sitemap()],
   outDir: './dist',
   trailingSlash: 'ignore',
   // Astro 3's build-time CSS chunking sometimes links a page generated via
@@ -14,4 +17,4 @@ export default {
   redirects: {
     '/projects/pokedex': 'https://pokedex-ai-test.vercel.app/projects/pokedex'
   }
-}; 
+});
