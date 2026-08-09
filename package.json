@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A blog site built with Astro",
   "main": "src/pages/index.astro",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,9 +14,6 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.2.0"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
   },
   "keywords": [
     "astro",
